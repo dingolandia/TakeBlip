@@ -1,0 +1,172 @@
+$field-height:30px;
+$border-radius:8px;
+$color-gray:#56616e;
+
+.wrapper{
+    h3, ul, ol{
+        margin:0;
+        padding:0;
+    }
+    padding:10px 40px;
+    max-width: 1200px;
+    margin:0 auto;
+    header{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        div.left-block{
+            h3{
+                font-size: 30px;
+                color:$color-gray;
+            }
+        }
+        div.right-block{
+            ul{
+                margin:0 0 0 auto;
+                list-style-type: none;
+                display: table;
+                li{
+                    display: table-cell;
+                    vertical-align: middle;
+                    padding:0 4px;
+                    input[type=text]{
+                        display: block;
+                        line-height: 28px;
+                        border-radius: $border-radius;
+                        border:solid 1px #d2dfe6;
+                        background: #fff;
+                        padding:0 5px;
+                        width: 250px;                        
+                    }
+                    ::placeholder{
+                        color: #8ca0b3;
+                    }
+                    button{
+                        background-color: #2cc3d5;
+                        border:none;
+                        border-radius: $border-radius;
+                        line-height: $field-height;
+                        color:#fff;
+                        font-size: 11px;
+                        font-weight: bold;
+                        padding:0 15px;
+                        cursor: pointer;
+                    }
+                    img{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    div{
+        h4{
+            color:#607b99;
+            font-size: 25px;
+        }
+    }
+    div.contact-block{
+        ol{
+            list-style-type: none;
+            li{
+                background-color: #fff;
+                width: 165px;
+                border-radius: 8px;
+                text-align: center;
+                padding: 10px;
+                float: left;
+                margin-bottom: 20px;
+                filter: drop-shadow(4px 2px 2px #ddd);
+                min-height: 180px;
+                div.icon-star{
+                    text-align: left;
+                    img{
+                        cursor: pointer;
+                    }
+                }
+                div.p-name{
+                    margin-top: 10px;
+                }
+                div{
+                    span.profile-name{
+                        font-size: 13px;
+                        font-weight: bold;                        
+                        color:$color-gray;
+                    }
+                    span.profile-plan{
+                        font-size: 11px;
+                        font-weight: normal;
+                        color:$color-gray;
+                    }
+                }                
+                div.picture-circle{
+                    border-radius: 100px;
+                    width: 60px;
+                    height: 60px;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    cursor: pointer;
+                    img{
+                        transform: translate(-9%, -1%);
+                        max-width: 70px;
+                        max-height: 200px;
+                    }
+                }
+            }
+            li + li{
+                margin-left: 23px;
+            }
+            li:nth-child(7n){
+                margin-left: 0 !important;
+            }
+        }
+    }
+    hr{
+        color: #d2dfe6;
+        fill: #d2dfe6;
+        outline-color: #d2dfe6;
+        margin-bottom: 23px;
+    }
+
+    div.content-in-list{
+        ol{
+            li{
+                width: calc(100% - 50px);
+                min-height: auto;
+                text-align: left;
+                float:right;
+                position: relative;
+                div{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                div.icon-star{
+                    position:absolute;
+                    left: -40px;
+                    top: 17px;                
+                }
+                div.p-name{
+                    margin: 0 0 0 10px;
+                }
+                div.picture-circle{
+                    width: 40px;
+                    height: 40px;
+                    img{
+                        transform: translate(-8%, -1%);
+                        max-width: 50px;
+                        max-height: 100px;
+                    }
+                }
+                div.profile-created{
+                    margin: 10px 0 0 0;
+                    float:right;
+                    span{
+                        font-size: 12px;
+                    }
+                }
+            }
+            li + li{
+                margin-left: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<div class="wrapper">
+    <header>
+        <div class="left-block">
+            <h3>My chatbots</h3>
+        </div>
+        <div class="right-block">
+            <ul>
+                <li>
+                    <input placeholder="Search" type="text" [(ngModel)]="busca" />
+                </li>
+                <li>
+                    <button (click)="OrderByName()">Order by name</button>
+                </li>
+                <li>
+                    <button (click)="OrderByDateCreation()">Order by creation</button>
+                </li>
+                <li>
+                    <img src="assets/images/organize-blocks.png" (click)="DisplayInBlock()" />
+                </li>
+                <li>
+                    <img src="assets/images/organize-list.png" (click)="DisplayInList()" />
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div>
+        <h4>Favorities</h4>
+    </div>
+
+    <div class="contact-block clearfix" [ngClass]="{'content-in-list':displayList}">
+        <ol>
+            <li *ngFor="let item of contactListFav; ">
+                <div class="icon-star"><img src="assets/images/star.png" (click)="RemoveFav(item.id)" /></div>
+                <div class="picture-circle"><img [src]="item.image" [routerLink]="['/sobre']" [queryParams]="{id: item.id}"></div>
+                <div class="p-name">
+                    <span class="profile-name">{{item.name}}</span>
+                </div>
+                <div *ngIf="!displayList">
+                    <span class="profile-plan">{{item.plan}}</span>
+                </div>
+                <div class="profile-created" *ngIf="displayList">
+                    <span>Created at {{ item.created | date:"dd/MM/yyyy" }}</span>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <hr />
+
+    <div class="contact-block clearfix" [ngClass]="{'content-in-list':displayList}">
+        <ol>
+            <li *ngFor="let item of contactListFiltered; ">
+                <div class="icon-star"><img src="assets/images/favorite.png" (click)="AddFav(item.id)" /></div>
+                <div class="picture-circle"><img [src]="item.image" [routerLink]="['/sobre']" [queryParams]="{id: item.id}"></div>
+                <div class="p-name">
+                    <span class="profile-name">{{item.name}}</span>
+                </div>
+                <div *ngIf="!displayList">
+                    <span class="profile-plan">{{item.plan}}</span>
+                </div>
+                <div class="profile-created" *ngIf="displayList">
+                    <span>Created at {{ item.created | date:"dd/MM/yyyy" }}</span>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+</div>

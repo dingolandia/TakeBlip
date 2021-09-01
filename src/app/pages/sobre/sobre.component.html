@@ -1,0 +1,108 @@
+<div class="wrapper">
+    <header>
+        <div class="left-block clearfix">
+            <div class="b1">
+                <div class="picture-circle">
+                    <img src="{{objUsr.image}}" />
+                </div>
+            </div>
+            <div class="b1">
+                <div class="title-nome">
+                    <span>{{objUsr.name}}</span>
+                </div>
+                <div class="title-id">
+                    <span>{{objUsr.shortName}}</span>
+                </div>                
+            </div>
+        </div>
+        <div class="right-block">
+            <span>Created at {{objUsr.created | date:"dd/MM/yyyy"}}</span>
+        </div>
+    </header>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-data">
+            <div class="line-one-grid content-height">
+                <div class="region bg-white">
+                    <div class="block-region">
+                        <div class="region-line-1">
+                            <span>Region and language</span>
+                        </div>
+                        <div>
+                            <span>{{objUsr.culture}}</span>
+                        </div>
+                        <div class="top-space">
+                            <span>
+                                Timezone
+                            </span>
+                        </div>
+                        <div>
+                            [{{objUsr.created | date:'zzzz'}}]
+                        </div>
+                    </div>
+                </div>
+                <div class="usuarios-ativos bg-white">
+                    <ul class="mod-ico-text">
+                        <li>
+                            <div class="ico-circle cor1"><img src="assets/images/user.png"></div>
+                        </li>
+                        <li>
+                            <div class="linha-1-mod">
+                                <span>{{objUsr.analytics.user.actived}}</span>
+                            </div>
+                            <div class="linha-2-mod">
+                                <span>Usuários ativos</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>     
+            </div>
+            <div class="line-two-grid content-height">
+                <div class="bg-white"> 
+                    <ul class="mod-ico-text">
+                        <li>
+                            <div class="ico-circle cor2"><img src="assets/images/union.png"></div>
+                        </li>
+                        <li>
+                            <div class="linha-1-mod">
+                                <span>{{objUsr.analytics.message.received}}</span>
+                            </div>
+                            <div class="linha-2-mod">
+                                <span>Mensagens recebidas</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white">
+                    <ul class="mod-ico-text">
+                        <li>
+                            <div class="ico-circle cor3"><img src="assets/images/sent.png"></div>
+                        </li>
+                        <li>
+                            <div class="linha-1-mod">
+                                <span>{{objUsr.analytics.message.sent}}</span>
+                            </div>
+                            <div class="linha-2-mod">
+                                <span>Mensagens enviadas</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>        
+        </div>
+        <div class="content-signup">
+            <img src="assets/images/plano.png" />
+            <div>
+                <span>Status acount</span>
+            </div>
+            <div>
+                <h4>Free</h4>
+            </div>
+            <div class="bt">
+                <button>Update acount</button>
+            </div>
+        </div>
+    </div>
+</div>
